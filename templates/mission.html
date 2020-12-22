@@ -5,9 +5,16 @@
 {%  endblock %}
 
 {% block main %}
-
+    <table class="table table-striped table-hover table-dark" id="shows_table">
+      <tbody>
+        <tr>
+          <td>event_title</td>
+          <td>event_date</td>
+          <td>get_tickets_button</td>
+        </tr>
+    </table>
 {%  endblock %}
 
 {%  block footer %}
-    Data web scraped from <a href="https://www.missionballroom.com/upcoming-events/">Mission Ballroom</a>.
+    Data web scraped from <a href="https://www.missionballroom.com/upcoming-events/" target="_blank">Mission Ballroom</a>.
 {% endblock %}

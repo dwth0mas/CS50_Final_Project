@@ -130,6 +130,7 @@ def homepage():
 @app.route('/red-rocks')
 @login_required
 def red_rocks():
+
     return render_template("redrocks.html")
 
 

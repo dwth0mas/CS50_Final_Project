@@ -5,9 +5,16 @@
 {%  endblock %}
 
 {% block main %}
-
+    <table class="table table-striped table-hover table-info" id="shows_table">
+      <tbody>
+        <tr>
+          <td>event_title</td>
+          <td>event_date</td>
+          <td>get_tickets_button</td>
+        </tr>
+    </table>
 {%  endblock %}
 
 {%  block footer %}
-    Data web scraped from <a href="http://www.fillmoreauditorium.org/events/">Fillmore Auditorium</a>.
+    Data web scraped from <a href="http://www.fillmoreauditorium.org/events/" target="_blank">Fillmore Auditorium</a>.
 {% endblock %}
