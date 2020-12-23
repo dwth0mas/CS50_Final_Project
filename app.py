@@ -6,6 +6,7 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
 import sqlite3
+from scrapers import *
 
 from helpers import apology, login_required
 
@@ -167,6 +168,29 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
+
+
+@app.cli.command()
+def scheduled_scrapers():
+    """Run all scrapers."""
+    print('Running scrapers')
+
+    # Running the Red Rocks Amphitheater scraper
+    red_rocks_scraper(db)
+
+    # Running the Ogden Theatre scraper
+    ogden_scraper(db)
+
+    # Running the Mission Ballroom scraper
+    mission_scraper(db)
+
+    # Running the Fillmore Auditorium scraper
+    fillmore_scraper(db)
+
+    # Running the Gothic Theatre scraper
+    gothic_scraper(db)
+
+    print('Scrapers are complete!')
 
 
 def errorhandler(e):
