@@ -7,11 +7,18 @@
 {% block main %}
     <table class="table table-striped table-hover table-danger" id="shows_table">
       <tbody>
-        <tr>
-          <td>event_title</td>
-          <td>event_date</td>
-          <td>get_tickets_button</td>
-        </tr>
+          {% for row in event_info_list %}
+                <tr>
+                  <td>{{ row[0] }}</td>
+                  <td>{{ row[1] }}</td>
+                  <td>
+                      <button type="button" class="btn btn-outline-dark" onclick="window.open('{{ row[2] }}','_blank')">
+                          Get Tickets
+                      </button>
+                  </td>
+                </tr>
+            {% endfor %}
+      </tbody>
     </table>
 {%  endblock %}
 

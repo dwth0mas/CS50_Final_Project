@@ -131,32 +131,46 @@ def homepage():
 @app.route('/red-rocks')
 @login_required
 def red_rocks():
+    # Getting all event titles and dates
+    event_info_list = db.execute("SELECT * FROM red_rocks_shows").fetchall()
 
-    return render_template("redrocks.html")
+    return render_template("redrocks.html", event_info_list=event_info_list)
 
 
 @app.route('/ogden')
 @login_required
 def ogden():
-    return render_template("ogden.html")
+    # Getting all event titles and dates
+    event_info_list = db.execute("SELECT * FROM ogden_shows").fetchall()
+
+    return render_template("ogden.html", event_info_list=event_info_list)
 
 
 @app.route('/fillmore')
 @login_required
 def fillmore():
-    return render_template("fillmore.html")
+    # Getting all event titles and dates
+    event_info_list = db.execute("SELECT * FROM fillmore_shows").fetchall()
+
+    return render_template("fillmore.html", event_info_list=event_info_list)
 
 
 @app.route('/gothic')
 @login_required
 def gothic():
-    return render_template("gothic.html")
+    # Getting all event titles and dates
+    event_info_list = db.execute("SELECT * FROM gothic_shows").fetchall()
+
+    return render_template("gothic.html", event_info_list=event_info_list)
 
 
 @app.route('/mission')
 @login_required
 def mission():
-    return render_template("mission.html")
+    # Getting all event titles and dates
+    event_info_list = db.execute("SELECT * FROM mission_shows").fetchall()
+
+    return render_template("mission.html", event_info_list=event_info_list)
 
 
 @app.route("/logout")

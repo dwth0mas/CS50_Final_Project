@@ -34,19 +34,19 @@
             <div class="collapse navbar-collapse" id="navbar">
                 {% if session.user_id %}
                     <ul class="navbar-nav mr-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/red-rocks">Red Rocks</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/ogden">Ogden</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/mission">Mission</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/fillmore">Fillmore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/gothic">Gothic</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/red-rocks">Red Rocks</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/ogden">Ogden</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/mission">Mission</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/fillmore">Fillmore</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/gothic">Gothic</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/logout">Log Out</a></li>
                     </ul>
                 {% else %}
                     <ul class="navbar-nav ml-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item" id="nav-item-id"><a class="nav-link" href="/login">Log In</a></li>
                     </ul>
                 {% endif %}
             </div>
