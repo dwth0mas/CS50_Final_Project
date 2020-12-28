@@ -5,59 +5,108 @@
 {%  endblock %}
 
 {% block main %}
-<div id="slides" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#slides" data-slide-to="0" class="active"></li>
-        <li data-target="#slides" data-slide-to="1"></li>
-        <li data-target="#slides" data-slide-to="2"></li>
-        <li data-target="#slides" data-slide-to="3"></li>
-        <li data-target="#slides" data-slide-to="4"></li>
-    </ul>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="static/red_rocks_home_page_image.jpg">
-            <div class="carousel-caption">
-                <h1 class="display-2">Red Rocks</h1>
-                <h3>World Famous Amphitheater</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="/red-rocks">View Shows</a></button>
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+            <li data-target="#slides" data-slide-to="3"></li>
+            <li data-target="#slides" data-slide-to="4"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="static/redrocks_resized.jpg">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Red Rocks</h1>
+                    <h3>World Famous Amphitheater</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"><a href="/red-rocks">View Shows</a></button>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="static/ogden_home_page_image.jpg">
-            <div class="carousel-caption">
-                <h1 class="display-2">Ogden Theatre</h1>
-                <h3>Historic Denver Theatre</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="/ogden">View Shows</a></button>
+            <div class="carousel-item">
+                <img src="static/ogden_resized.jpg">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Ogden Theatre</h1>
+                    <h3>Historic Denver Theatre</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"><a href="/ogden">View Shows</a></button>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="static/mission_home_page_image.jpg">
-            <div class="carousel-caption">
-                <h1 class="display-2">Mission Ballroom</h1>
-                <h3>Denver's Newest Venue</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="/mission">View Shows</a></button>
+            <div class="carousel-item">
+                <img src="static/mission_resized.jpg">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Mission Ballroom</h1>
+                    <h3>Denver's Newest Venue</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"><a href="/mission">View Shows</a></button>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="static/fillmore_home_page_image.jpg">
-            <div class="carousel-caption">
-                <h1 class="display-2">Fillmore Auditorium</h1>
-                <h3>Colorado's Largest Indoor Venue</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="/fillmore">View Shows</a></button>
+            <div class="carousel-item">
+                <img src="static/fillmore_resized.jpg">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Fillmore Auditorium</h1>
+                    <h3>Colorado's Largest Indoor Venue</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"><a href="/fillmore">View Shows</a></button>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="static/gothic_home_page_image.jpg">
-            <div class="carousel-caption">
-                <h1 class="display-2">Gothic Theatre</h1>
-                <h3>Former Movie Theater Turned Music Venue</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="/gothic">View Shows</a></button>
+            <div class="carousel-item">
+                <img src="static/gothic_resized.jpg">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Gothic Theatre</h1>
+                    <h3>Former Movie Theater Turned Music Venue</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"><a href="/gothic">View Shows</a></button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Welcome to Denver Shows</h1>
+            </div>
+            <hr>
+            <div class="col-12">
+                <p class="lead">For all who love live music. Denver Shows is a website dedicated to keeping users up to
+                    date on all upcoming concerts in the Denver area! Each venue page on this site is updated on a daily
+                    basis by scraping the concert data from the venue's respective website. By using Denver Shows,
+                    you can view upcoming concerts at all of the major Denver venues in one place. All data provided by this
+                    website was gathered from other public websites in an effort to better connect people with the music
+                    they love.</p>
+            </div>
+        </div>
+    </div>
 {%  endblock %}
 
 {%  block footer %}
+    <div>
+        <hr class="my-4">
+    </div>
 
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-12">
+                <h2>Connect With Dylan</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="https://www.facebook.com/dylan.winter.thomas" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/d.winter.t/" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/dylan-thomas1996/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid padding homepage-footer">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <img src="static/denver_shows_logo_dark.png">
+                <hr class="light">
+            </div>
+            <div class="col-md-4">
+                <p>612-709-4984</p>
+            </div>
+            <div class="col-md-4">
+                <p>dylan.winter.thomas@gmail.com</p>
+            </div>
+            <div class="col-md-4">
+                <p>Denver, CO 80205</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
