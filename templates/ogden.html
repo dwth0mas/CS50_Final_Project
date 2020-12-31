@@ -5,23 +5,30 @@
 {%  endblock %}
 
 {% block main %}
-    <table class="table table-striped table-hover table-secondary" id="shows_table">
-      <tbody>
-          {% for row in event_info_list %}
-                <tr>
-                  <td>{{ row[0] }}</td>
-                  <td>{{ row[1] }}</td>
-                  <td>
-                      <button type="button" class="btn btn-outline-dark" onclick="window.open('{{ row[2] }}','_blank')">
-                          Get Tickets
-                      </button>
-                  </td>
-                </tr>
-            {% endfor %}
-      </tbody>
-    </table>
+    <div class="container-fluid venue-body">
+        <div class="container-fluid venue-header" id="venue-header">
+            <h2>Ogden Shows</h2>
+        </div>
+        <table class="table table-striped table-hover table-secondary" id="shows_table">
+          <tbody>
+              {% for row in event_info_list %}
+                    <tr>
+                      <td>{{ row[0] }}</td>
+                      <td>{{ row[1] }}</td>
+                      <td>
+                          <button type="button" class="btn btn-outline-dark" onclick="window.open('{{ row[2] }}','_blank')">
+                              Get Tickets
+                          </button>
+                      </td>
+                    </tr>
+                {% endfor %}
+          </tbody>
+        </table>
+    </div>
 {%  endblock %}
 
 {%  block footer %}
-    Data web scraped from <a href="https://www.ogdentheatre.com/events" target="_blank">Ogden Theater</a>.
+    <div class="container-fluid padding">
+        <p>Data web scraped from <a href="https://www.ogdentheatre.com/events" target="_blank">Ogden Theater</a>.</p>
+    </div>
 {% endblock %}

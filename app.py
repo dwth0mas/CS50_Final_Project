@@ -6,8 +6,13 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
 import sqlite3
-from scrapers import *
 
+import time
+import atexit
+
+from apscheduler.schedulers.background import BackgroundScheduler
+
+from scrapers import *
 from helpers import apology, login_required
 
 # Configure application
@@ -184,7 +189,6 @@ def logout():
     return redirect("/")
 
 
-@app.cli.command()
 def scheduled_scrapers():
     """Run all scrapers."""
     print('Running scrapers')
@@ -205,6 +209,16 @@ def scheduled_scrapers():
     gothic_scraper(db)
 
     print('Scrapers are complete!')
+
+
+# Running scrapers at application start up and every hour to update current upcoming shows
+scheduler = BackgroundScheduler()
+scheduled_scrapers()
+scheduler.add_job(func=scheduled_scrapers, trigger="interval", hours=1)
+scheduler.start()
+
+# Shut down the scheduler when exiting the app
+atexit.register(lambda: scheduler.shutdown())
 
 
 def errorhandler(e):

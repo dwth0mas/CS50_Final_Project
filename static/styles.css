@@ -114,9 +114,97 @@ main img
     border: 1px solid #d24545;
 }
 
-/* Footer Styling */
+.padding {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.welcome hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+
+/* Homepage Connect */
+.social a {
+    padding: 1rem;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 3px 1px;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-facebook:hover,
+.fa-instagram:hover,
+.fa-linkedin:hover {
+  background: #007bb5;
+  opacity: 70%;
+}
+
+/* Homepage Footer Styling */
 .homepage-footer{
-    background-color: #fcb8b8;
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    font-size: 125%;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 80%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+
+/* Venue Body Styling */
+.venue-body {
+    background-image: url("../static/venue_body_background_image.jpg");
+}
+
+.venue-header {
+    background-color: #6e6969;
+    width: 80%;
+    padding: 1.25em;
+    color: #fafafa;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 78.6%;
+}
+
+.sticky-table {
+  padding-top: 100px;
 }
 
 /* Media Queries */
@@ -139,6 +227,19 @@ main img
         font-size: 65%;
         padding: 8px 14px;
     }
+
+    .social a {
+        padding: 2rem;
+    }
+
+    .fa {
+      padding: 15px;
+      font-size: 25px;
+      width: 65px;
+      text-align: center;
+      text-decoration: none;
+      margin: 4px 2px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -160,6 +261,19 @@ main img
         font-size: 70%;
         padding: 8px 14px;
     }
+
+    .social a {
+        padding: 3rem;
+    }
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 70px;
+      text-align: center;
+      text-decoration: none;
+      margin: 4px 2px;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -180,6 +294,19 @@ main img
     .carousel-caption .btn {
         font-size: 80%;
         padding: 8px 14px;
+    }
+
+    .social a {
+        padding: 4rem;
+    }
+
+    .fa {
+      padding: 20px;
+      font-size: 35px;
+      width: 70px;
+      text-align: center;
+      text-decoration: none;
+      margin: 4px 2px;
     }
 }
 
@@ -205,7 +332,6 @@ main img
     }
 
     .social a {
-        /*font-size: 4.5em;*/
         padding: 5rem;
     }
 
@@ -216,27 +342,5 @@ main img
       text-align: center;
       text-decoration: none;
       margin: 5px 2px;
-    }
-
-    .fa-facebook {
-      background: #3B5998;
-      color: white;
-    }
-
-    .fa-instagram {
-      background: #125688;
-      color: white;
-    }
-
-    .fa-linkedin {
-      background: #007bb5;
-      color: white;
-    }
-
-    .fa-facebook:hover,
-    .fa-instagram:hover,
-    .fa-linkedin:hover {
-      background: #007bb5;
-      opacity: 70%;
     }
 }
