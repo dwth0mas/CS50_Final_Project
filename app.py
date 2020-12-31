@@ -269,13 +269,13 @@ def scheduled_scrapers():
 
 
 # Running scrapers at application start up and every hour to update current upcoming shows
-# scheduler = BackgroundScheduler()
-# scheduled_scrapers()
-# scheduler.add_job(func=scheduled_scrapers, trigger="interval", hours=1)
-# scheduler.start()
-#
-# # Shut down the scheduler when exiting the app
-# atexit.register(lambda: scheduler.shutdown())
+scheduler = BackgroundScheduler()
+scheduled_scrapers()
+scheduler.add_job(func=scheduled_scrapers, trigger="interval", hours=1)
+scheduler.start()
+
+# Shut down the scheduler when exiting the app
+atexit.register(lambda: scheduler.shutdown())
 
 
 def errorhandler(e):
@@ -288,6 +288,3 @@ def errorhandler(e):
 # Listen for errors
 for code in default_exceptions:
     app.errorhandler(code)(errorhandler)
-
-# if __name__ == '__main__':
-#     app.run()
