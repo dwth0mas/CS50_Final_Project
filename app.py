@@ -109,7 +109,6 @@ def register():
         # Query database to check that username is unique
         rows = db.execute("SELECT COUNT(*) FROM users WHERE username = :username", [username])
         rows_length = rows.fetchone()
-        print(rows_length)
 
         # Ensure username does not already exist
         if rows_length[0] > 0:
@@ -125,6 +124,64 @@ def register():
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("register.html")
+
+
+@app.route("/password-change", methods=["GET", "POST"])
+def password_change():
+    """Change user password"""
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+
+        username = request.form.get("username")
+        new_password = generate_password_hash(request.form.get("new-password"))
+
+        # Ensure username was submitted
+        if not request.form.get("username"):
+            return apology("must provide username", 403)
+
+        # Ensure old password was submitted
+        elif not request.form.get("old-password"):
+            return apology("must provide old password", 403)
+
+        # Ensure new password was submitted
+        elif not request.form.get("new-password"):
+            return apology("must provide new password", 403)
+
+        # Ensure new password verification was submitted
+        elif not request.form.get("verify-new-password"):
+            return apology("must verify new password", 403)
+
+        # Ensure the new password is verified
+        elif request.form.get("new-password") != request.form.get("verify-new-password"):
+            return apology("new password does not match verification", 403)
+
+        # Ensure the new password is different from the old password
+        elif request.form.get("new-password") == request.form.get("old-password"):
+            return apology("new password is the same as your old password", 403)
+
+        # Query database to check that username is unique
+        rows_cursor = db.execute("SELECT * FROM users WHERE username = :username", [username])
+        rows_list = rows_cursor.fetchall()
+        rows_length = len(rows_list)
+        print(rows_length)
+        print(rows_list)
+        print(rows_list[0][2])
+
+        # Ensure username exists and password is correct
+        if rows_length != 1 or not check_password_hash(rows_list[0][2], request.form.get("old-password")):
+            return apology("invalid username and/or password", 403)
+
+        # Update user's password in database
+        db.execute("UPDATE users SET hash = :newPassword WHERE username = :username",
+                   (new_password, username))
+
+        password_change_message = "Password Changed Successfully!"
+        return render_template("login.html", password_change_message=password_change_message)
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    else:
+        return render_template("password_change.html")
 
 
 @app.route('/')
@@ -212,13 +269,13 @@ def scheduled_scrapers():
 
 
 # Running scrapers at application start up and every hour to update current upcoming shows
-scheduler = BackgroundScheduler()
-scheduled_scrapers()
-scheduler.add_job(func=scheduled_scrapers, trigger="interval", hours=1)
-scheduler.start()
-
-# Shut down the scheduler when exiting the app
-atexit.register(lambda: scheduler.shutdown())
+# scheduler = BackgroundScheduler()
+# scheduled_scrapers()
+# scheduler.add_job(func=scheduled_scrapers, trigger="interval", hours=1)
+# scheduler.start()
+#
+# # Shut down the scheduler when exiting the app
+# atexit.register(lambda: scheduler.shutdown())
 
 
 def errorhandler(e):
